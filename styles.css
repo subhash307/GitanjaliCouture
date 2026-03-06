@@ -1,0 +1,477 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Cormorant+Garamond:wght@300;400;500;600&family=Ubuntu:wght@400;500;700&display=swap');
+
+/* Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Cormorant Garamond', serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f5f0ea;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, rgba(20, 10, 5, 0.92) 0%, rgba(40, 20, 10, 0.88) 50%, rgba(60, 30, 15, 0.85) 100%),
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><defs><filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" result="noise"/><feColorMatrix in="noise" type="saturate" values="0"/></filter></defs><rect width="1200" height="800" fill="%23d4af37" opacity="0.05" filter="url(%23noise)"/></svg>');
+    background-attachment: fixed;
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    overflow: hidden;
+    color: #f5f0ea;
+    text-align: center;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(ellipse at top right, rgba(212, 175, 55, 0.15) 0%, transparent 50%),
+                radial-gradient(ellipse at bottom left, rgba(212, 175, 55, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+    animation: fadeInUp 1s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.logo {
+    margin-bottom: 40px;
+    animation: fadeInDown 1s ease-out;
+}
+
+.brand-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: #d4af37;
+    font-style: italic;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin-bottom: 5px;
+    letter-spacing: 2px;
+}
+
+.brand-tagline {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1rem;
+    letter-spacing: 3px;
+    color: #d4af37;
+    font-weight: 500;
+}
+
+.hero-text {
+    margin-bottom: 50px;
+}
+
+.welcome {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-style: italic;
+    margin-bottom: 10px;
+    color: #e8dcc8;
+}
+
+.main-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #d4af37;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+.subtitle {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    font-style: italic;
+    margin-bottom: 30px;
+    color: #e8dcc8;
+}
+
+.description {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    margin-bottom: 45px;
+    color: #e8dcc8;
+    line-height: 1.8;
+}
+
+/* Services List */
+.services-list {
+    margin: 40px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 50px;
+}
+
+.service-item {
+    font-size: 1.2rem;
+    color: #d4af37;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+}
+
+.service-icon {
+    font-size: 1rem;
+}
+
+.service-text {
+    color: #e8dcc8;
+}
+
+/* Contact Info */
+.contact-info {
+    margin-top: 50px;
+    padding-top: 40px;
+    border-top: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+.location,
+.phone {
+    font-size: 1.3rem;
+    margin: 10px 0;
+    color: #d4af37;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.location-icon,
+.phone-icon {
+    font-size: 1rem;
+}
+
+/* Coming Soon Section */
+.coming-soon {
+    background: linear-gradient(135deg, #f5f0ea 0%, #e8dcc8 100%);
+    padding: 80px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.coming-soon::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image:
+        radial-gradient(circle at 10% 20%, rgba(212, 175, 55, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 90% 80%, rgba(212, 175, 55, 0.08) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.coming-soon-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    color: #2a1810;
+    margin-bottom: 20px;
+    font-weight: 700;
+    position: relative;
+    z-index: 1;
+}
+
+.coming-soon-description {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    color: #4a3728;
+    margin-bottom: 50px;
+    position: relative;
+    z-index: 1;
+}
+
+.features-heading {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: #2a1810;
+    margin: 40px 0 30px 0;
+    position: relative;
+    z-index: 1;
+}
+
+.features-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 600px;
+    margin: 0 auto 50px;
+    position: relative;
+    z-index: 1;
+}
+
+.feature-item {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    color: #4a3728;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+}
+
+.feature-icon {
+    color: #8b6f47;
+    font-size: 1rem;
+}
+
+.social-heading {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    color: #4a3728;
+    margin: 50px 0 30px 0;
+    position: relative;
+    z-index: 1;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 1;
+}
+
+.social-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    padding: 10px 15px;
+    border-radius: 4px;
+}
+
+.social-link.instagram {
+    color: #E4405F;
+}
+
+.social-link.instagram:hover {
+    background-color: rgba(228, 64, 95, 0.1);
+}
+
+.social-link.facebook {
+    color: #1877F2;
+}
+
+.social-link.facebook:hover {
+    background-color: rgba(24, 119, 242, 0.1);
+}
+
+.social-link.youtube {
+    color: #FF0000;
+}
+
+.social-link.youtube:hover {
+    background-color: rgba(255, 0, 0, 0.1);
+}
+
+.social-link i {
+    font-size: 1.3rem;
+}
+
+/* Footer */
+.footer {
+    background: linear-gradient(135deg, rgba(20, 10, 5, 0.95) 0%, rgba(40, 20, 10, 0.92) 100%);
+    color: #d4af37;
+    padding: 40px;
+    text-align: center;
+    border-top: 2px solid #d4af37;
+}
+
+.footer-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.footer-brand {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    margin-bottom: 15px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.footer-address {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    color: #e8dcc8;
+    line-height: 1.8;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .brand-name {
+        font-size: 2.5rem;
+    }
+
+    .main-title {
+        font-size: 2.5rem;
+    }
+
+    .subtitle {
+        font-size: 1.3rem;
+    }
+
+    .welcome {
+        font-size: 1.2rem;
+    }
+
+    .description {
+        font-size: 1rem;
+    }
+
+    .service-item,
+    .location,
+    .phone {
+        font-size: 1rem;
+    }
+
+    .coming-soon-title {
+        font-size: 2rem;
+    }
+
+    .coming-soon-description {
+        font-size: 1rem;
+    }
+
+    .features-heading {
+        font-size: 1.2rem;
+    }
+
+    .feature-item {
+        font-size: 1rem;
+    }
+
+    .social-heading {
+        font-size: 1rem;
+    }
+
+    .social-links {
+        gap: 15px;
+    }
+
+    .social-link {
+        font-size: 0.95rem;
+    }
+
+    .footer-brand {
+        font-size: 1.5rem;
+    }
+
+    .footer-address {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        padding: 20px 10px;
+    }
+
+    .logo {
+        margin-bottom: 30px;
+    }
+
+    .brand-name {
+        font-size: 2rem;
+    }
+
+    .main-title {
+        font-size: 1.8rem;
+        margin-bottom: 15px;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+    }
+
+    .welcome {
+        font-size: 1rem;
+    }
+
+    .description {
+        font-size: 0.95rem;
+    }
+
+    .coming-soon {
+        padding: 50px 20px;
+    }
+
+    .coming-soon-title {
+        font-size: 1.5rem;
+    }
+
+    .coming-soon-description {
+        font-size: 0.95rem;
+    }
+
+    .features-heading {
+        font-size: 1rem;
+    }
+
+    .feature-item {
+        font-size: 0.95rem;
+    }
+
+    .social-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .social-link {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        max-width: 250px;
+        margin: 0 auto;
+    }
+
+    .footer-brand {
+        font-size: 1.2rem;
+    }
+
+    .footer-address {
+        font-size: 0.85rem;
+    }
+}
