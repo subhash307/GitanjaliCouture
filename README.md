@@ -2,32 +2,46 @@
 
 🌟 **Elegant Designer Dresses & Custom Bridal Couture**
 
-A beautiful, responsive landing page for Gitanjali Couture - a luxury bridal and designer clothing boutique based in Bangalore, India.
+A stunning, fully responsive landing page for Gitanjali Couture - a luxury bridal and designer clothing boutique based in Bangalore, India. This coming soon page showcases the brand's elegance while building anticipation for the full website launch.
 
 ## 🎨 Features
 
-- **Elegant Design**: Luxury-themed aesthetic with gold accents and dark backgrounds
-- **Fully Responsive**: Works perfectly on desktop, tablet, and mobile devices
-- **Fast Loading**: Pure HTML/CSS - no heavy frameworks or dependencies
-- **Accessible**: Semantic HTML structure with proper contrast ratios
+- **Beautiful Hero Section**: Showcase image of designer collections with fixed navigation bar
+- **Coming Soon Page**: Elegant announcement of the upcoming full website
+- **Service Showcase**: Beautifully designed cards highlighting Bridal Lehengas, Designer Gowns, Custom Stitching, and Ladies Wear
+- **Elegant Design**: Luxury-themed aesthetic with gold accents (#d4af37) on dark backgrounds
+- **Fully Responsive**: Optimized for desktop, tablet, and mobile devices
+- **Fast Loading**: Pure HTML/CSS with Font Awesome icons - no heavy frameworks
+- **Smooth Animations**: Beautiful fade-in and zoom effects throughout
 - **Social Media Integration**: Links to Instagram, Facebook, and YouTube
+- **Accessible**: Semantic HTML structure with excellent contrast and readability
 
 ## 📋 Sections
 
+### Fixed Navigation Bar
+- Logo display from logo.png
+- Brand name with elegant typography
+- Stays visible while scrolling
+
 ### Hero Section
-- Brand logo and tagline
-- Welcoming message with brand tagline "Elegance in Every Stitch"
-- Service highlights
-- Contact information
+- Full-width showcase image (main.png) featuring designer collections
+- Beautiful zoom animation on page load
+- Professional presentation of brand
 
 ### Coming Soon Section
-- Information about the upcoming full website
-- List of features coming soon
-- Social media links to stay connected
+- Welcome message with logo and elegant heading
+- Description of the website launch
+- Service highlight cards (4-column grid with hover effects)
+- Features list of upcoming platform capabilities
+- Contact information with location and phone number
+- Social media follow section with Instagram, Facebook, and YouTube links
+- Call-to-action for newsletter subscription
 
 ### Footer
-- Company name and complete address
-- Contact information
+- Brand name and tagline
+- Complete address information
+- Phone number as clickable link
+- Copyright information
 
 ## 🚀 Quick Start
 
@@ -73,25 +87,39 @@ A beautiful, responsive landing page for Gitanjali Couture - a luxury bridal and
 
 ```
 GitanjaliCouture/
-├── index.html          # Main HTML file
-├── styles.css          # Styling (responsive design)
-└── README.md           # This file
+├── index.html          # Main HTML file with all sections
+├── styles.css          # Complete responsive styling
+├── logo.png            # Brand logo (used in nav and coming soon)
+├── main.png            # Hero showcase image (models and designer wear)
+├── README.md           # This file
+└── .gitignore          # Git configuration
 ```
 
 ## 🎨 Design Details
 
-- **Color Palette**: Dark browns/blacks with gold (#d4af37) accents, cream backgrounds
+- **Color Palette**:
+  - Primary Accent: Gold (#d4af37)
+  - Dark Backgrounds: #140a05, #2a1810
+  - Light Backgrounds: #f5f0ea, #e8dcc8
+
 - **Fonts**:
-  - Playfair Display (headings)
-  - Cormorant Garamond (body text)
-  - Ubuntu (tags/labels)
-- **Icons**: Font Awesome 6.4.0
+  - Playfair Display (elegant headings)
+  - Cormorant Garamond (sophisticated body text)
+  - Poppins (modern social links)
 
-## 📱 Responsive Breakpoints
+- **Icons**: Font Awesome 6.4.0 (for location, phone, social media icons)
 
-- **Desktop**: 1200px and above
-- **Tablet**: 768px - 1199px
-- **Mobile**: Below 768px
+- **Responsive Breakpoints**:
+  - Desktop: 1200px and above
+  - Tablet: 768px - 1199px
+  - Mobile: Below 768px
+
+- **Special Effects**:
+  - Fixed navigation bar with backdrop blur
+  - Smooth scroll behavior
+  - Hover animations on service cards
+  - Fade-in and zoom animations on load
+  - Color transitions on interactive elements
 
 ## 🐛 Browser Support
 
@@ -122,23 +150,46 @@ GitanjaliCouture/
 ### Update Contact Information
 Edit the contact details in `index.html`:
 ```html
-<p class="phone">
-    <span class="phone-icon">☎</span>
-    +91 YOUR_PHONE_NUMBER
+<p class="contact-phone">
+    <i class="fas fa-phone-alt"></i>
+    <a href="tel:+916363647199">+91 YOUR_PHONE_NUMBER</a>
+</p>
+```
+
+### Update Address
+Edit the address in `index.html`:
+```html
+<p class="contact-location">
+    <i class="fas fa-map-marker-alt"></i>
+    Your Address Here
 </p>
 ```
 
 ### Update Social Media Links
-Update the social media URLs in `index.html`:
+Update the social media URLs in `index.html` to point to your profiles:
 ```html
-<a href="https://www.instagram.com/YOUR_HANDLE" target="_blank" class="social-link instagram">
+<a href="https://www.instagram.com/YOUR_HANDLE" target="_blank" class="social-icon instagram">
 ```
+
+### Replace Images
+- **logo.png**: Replace with your brand logo (ideally with transparent background)
+- **main.png**: Replace with your showcase/hero image
 
 ### Modify Colors
 Update color variables in `styles.css`:
-- Primary Gold: `#d4af37`
-- Dark Background: `#140a05`
-- Light Background: `#f5f0ea`
+- Primary Gold: `#d4af37` → Your brand color
+- Dark Background: `#140a05` or `#2a1810` → Your dark tone
+- Light Background: `#f5f0ea` → Your light tone
+
+### Edit Service Cards
+Modify the service cards in `index.html` section:
+```html
+<div class="service-card">
+    <div class="service-icon-circle">🤰</div>
+    <h3>Your Service Name</h3>
+    <p>Your service description</p>
+</div>
+```
 
 ## 📄 License
 
