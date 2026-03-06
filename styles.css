@@ -1,5 +1,5 @@
 /* Import Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Cormorant+Garamond:wght@300;400;500;600&family=Ubuntu:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Cormorant+Garamond:wght@300;400;500;600&family=Poppins:wght@300;400;500;600;700&display=swap');
 
 /* Reset & Base Styles */
 * {
@@ -17,171 +17,100 @@ body {
     line-height: 1.6;
     color: #333;
     background-color: #f5f0ea;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Navigation Bar */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(135deg, rgba(20, 10, 5, 0.95) 0%, rgba(40, 20, 10, 0.92) 100%);
+    padding: 15px 40px;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.nav-logo {
+    height: 50px;
+    width: auto;
+    opacity: 0.95;
+    transition: opacity 0.3s ease;
+}
+
+.nav-logo:hover {
+    opacity: 1;
+}
+
+.nav-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #d4af37;
+    letter-spacing: 1px;
 }
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(135deg, rgba(20, 10, 5, 0.92) 0%, rgba(40, 20, 10, 0.88) 50%, rgba(60, 30, 15, 0.85) 100%),
-                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><defs><filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" result="noise"/><feColorMatrix in="noise" type="saturate" values="0"/></filter></defs><rect width="1200" height="800" fill="%23d4af37" opacity="0.05" filter="url(%23noise)"/></svg>');
-    background-attachment: fixed;
+    margin-top: 80px;
     position: relative;
-    min-height: 100vh;
+    width: 100%;
+    height: 600px;
+    overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 40px 20px;
-    overflow: hidden;
-    color: #f5f0ea;
-    text-align: center;
 }
 
-.hero::before {
-    content: '';
+.hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    animation: zoomInSlide 0.8s ease-out;
+}
+
+@keyframes zoomInSlide {
+    from {
+        transform: scale(1.05);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.hero-overlay {
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background: radial-gradient(ellipse at top right, rgba(212, 175, 55, 0.15) 0%, transparent 50%),
-                radial-gradient(ellipse at bottom left, rgba(212, 175, 55, 0.1) 0%, transparent 50%);
+    background: rgba(20, 10, 5, 0.1);
     pointer-events: none;
-    z-index: 1;
-}
-
-.hero-content {
-    position: relative;
-    z-index: 2;
-    max-width: 900px;
-    animation: fadeInUp 1s ease-out;
-}
-
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.logo {
-    margin-bottom: 40px;
-    animation: fadeInDown 1s ease-out;
-}
-
-.brand-name {
-    font-family: 'Playfair Display', serif;
-    font-size: 3.5rem;
-    font-weight: 700;
-    color: #d4af37;
-    font-style: italic;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    margin-bottom: 5px;
-    letter-spacing: 2px;
-}
-
-.brand-tagline {
-    font-family: 'Ubuntu', sans-serif;
-    font-size: 1rem;
-    letter-spacing: 3px;
-    color: #d4af37;
-    font-weight: 500;
-}
-
-.hero-text {
-    margin-bottom: 50px;
-}
-
-.welcome {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.5rem;
-    font-style: italic;
-    margin-bottom: 10px;
-    color: #e8dcc8;
-}
-
-.main-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 4rem;
-    font-weight: 700;
-    margin-bottom: 20px;
-    color: #d4af37;
-    letter-spacing: 2px;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
-}
-
-.subtitle {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.8rem;
-    font-style: italic;
-    margin-bottom: 30px;
-    color: #e8dcc8;
-}
-
-.description {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.3rem;
-    margin-bottom: 45px;
-    color: #e8dcc8;
-    line-height: 1.8;
-}
-
-/* Services List */
-.services-list {
-    margin: 40px 0;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    margin-bottom: 50px;
-}
-
-.service-item {
-    font-size: 1.2rem;
-    color: #d4af37;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 12px;
-}
-
-.service-icon {
-    font-size: 1rem;
-}
-
-.service-text {
-    color: #e8dcc8;
-}
-
-/* Contact Info */
-.contact-info {
-    margin-top: 50px;
-    padding-top: 40px;
-    border-top: 1px solid rgba(212, 175, 55, 0.3);
-}
-
-.location,
-.phone {
-    font-size: 1.3rem;
-    margin: 10px 0;
-    color: #d4af37;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-}
-
-.location-icon,
-.phone-icon {
-    font-size: 1rem;
 }
 
 /* Coming Soon Section */
 .coming-soon {
-    background: linear-gradient(135deg, #f5f0ea 0%, #e8dcc8 100%);
+    background: linear-gradient(180deg, #f5f0ea 0%, #e8dcc8 50%, #f5f0ea 100%);
     padding: 80px 40px;
-    text-align: center;
     position: relative;
     overflow: hidden;
 }
@@ -199,204 +128,501 @@ body {
     pointer-events: none;
 }
 
-.coming-soon-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 3rem;
-    color: #2a1810;
-    margin-bottom: 20px;
-    font-weight: 700;
+.coming-soon-header {
+    text-align: center;
+    margin-bottom: 60px;
     position: relative;
     z-index: 1;
+    animation: fadeInDown 0.8s ease-out;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.coming-soon-logo {
+    height: 80px;
+    width: auto;
+    margin-bottom: 20px;
+    opacity: 0.95;
+}
+
+.coming-soon-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 4rem;
+    font-weight: 700;
+    color: #2a1810;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+}
+
+.coming-soon-subtitle {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    font-style: italic;
+    color: #8b6f47;
+    margin-bottom: 20px;
 }
 
 .coming-soon-description {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     color: #4a3728;
-    margin-bottom: 50px;
+    margin-bottom: 70px;
+    position: relative;
+    z-index: 1;
+    line-height: 1.8;
+}
+
+/* Service Cards */
+.services-showcase {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-bottom: 80px;
     position: relative;
     z-index: 1;
 }
 
-.features-heading {
+.service-card {
+    background: white;
+    padding: 40px 30px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    border-top: 3px solid #d4af37;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(212, 175, 55, 0.15);
+}
+
+.service-icon-circle {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    display: inline-block;
+    background: linear-gradient(135deg, #f5f0ea 0%, #e8dcc8 100%);
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.service-card h3 {
     font-family: 'Playfair Display', serif;
     font-size: 1.5rem;
     color: #2a1810;
-    margin: 40px 0 30px 0;
+    margin-bottom: 12px;
+    font-weight: 600;
+}
+
+.service-card p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Features Section */
+.features-section {
+    background: white;
+    padding: 50px 40px;
+    border-radius: 10px;
+    margin-bottom: 60px;
     position: relative;
     z-index: 1;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+.features-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: #2a1810;
+    text-align: center;
+    margin-bottom: 40px;
+    font-weight: 700;
 }
 
 .features-list {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    max-width: 600px;
-    margin: 0 auto 50px;
-    position: relative;
-    z-index: 1;
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
 }
 
-.feature-item {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.1rem;
-    color: #4a3728;
+.features-list li {
     display: flex;
-    justify-content: center;
     align-items: center;
-    gap: 12px;
-}
-
-.feature-icon {
-    color: #8b6f47;
-    font-size: 1rem;
-}
-
-.social-heading {
+    gap: 15px;
     font-family: 'Cormorant Garamond', serif;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     color: #4a3728;
-    margin: 50px 0 30px 0;
+}
+
+.check-icon {
+    color: #d4af37;
+    font-size: 1.5rem;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+/* Contact Section */
+.contact-section {
+    background: linear-gradient(135deg, rgba(20, 10, 5, 0.95) 0%, rgba(40, 20, 10, 0.92) 100%);
+    padding: 60px 40px;
+    border-radius: 10px;
+    color: #e8dcc8;
+    margin-bottom: 60px;
     position: relative;
     z-index: 1;
+    text-align: center;
 }
 
-.social-links {
+.contact-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    color: #d4af37;
+    margin-bottom: 30px;
+    font-weight: 700;
+}
+
+.contact-location,
+.contact-phone {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    margin: 15px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.contact-location i,
+.contact-phone i {
+    color: #d4af37;
+    font-size: 1.4rem;
+}
+
+.contact-phone a {
+    color: #d4af37;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.contact-phone a:hover {
+    text-decoration: underline;
+}
+
+/* Social Section */
+.social-section {
+    background: white;
+    padding: 50px 40px;
+    border-radius: 10px;
+    margin-bottom: 40px;
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+.social-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: #2a1810;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.social-subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    color: #8b6f47;
+    margin-bottom: 30px;
+}
+
+.social-icons {
     display: flex;
     justify-content: center;
     gap: 30px;
     flex-wrap: wrap;
-    position: relative;
-    z-index: 1;
 }
 
-.social-link {
+.social-icon {
     display: inline-flex;
     align-items: center;
-    gap: 8px;
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.1rem;
+    gap: 10px;
+    padding: 15px 25px;
+    border-radius: 50px;
     text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
     transition: all 0.3s ease;
-    padding: 10px 15px;
-    border-radius: 4px;
+    border: 2px solid transparent;
 }
 
-.social-link.instagram {
+.social-icon i {
+    font-size: 1.5rem;
+}
+
+.social-icon.instagram {
     color: #E4405F;
+    border-color: #E4405F;
 }
 
-.social-link.instagram:hover {
+.social-icon.instagram:hover {
     background-color: rgba(228, 64, 95, 0.1);
 }
 
-.social-link.facebook {
+.social-icon.facebook {
     color: #1877F2;
+    border-color: #1877F2;
 }
 
-.social-link.facebook:hover {
+.social-icon.facebook:hover {
     background-color: rgba(24, 119, 242, 0.1);
 }
 
-.social-link.youtube {
+.social-icon.youtube {
     color: #FF0000;
+    border-color: #FF0000;
 }
 
-.social-link.youtube:hover {
+.social-icon.youtube:hover {
     background-color: rgba(255, 0, 0, 0.1);
 }
 
-.social-link i {
-    font-size: 1.3rem;
-}
-
-/* Footer */
-.footer {
-    background: linear-gradient(135deg, rgba(20, 10, 5, 0.95) 0%, rgba(40, 20, 10, 0.92) 100%);
-    color: #d4af37;
-    padding: 40px;
+/* CTA Section */
+.cta-section {
+    background: linear-gradient(135deg, #d4af37 0%, #b8940a 100%);
+    padding: 50px 40px;
+    border-radius: 10px;
+    color: white;
     text-align: center;
-    border-top: 2px solid #d4af37;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
 }
 
-.footer-content {
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.footer-brand {
+.cta-title {
     font-family: 'Playfair Display', serif;
     font-size: 2rem;
     margin-bottom: 15px;
     font-weight: 700;
+}
+
+.cta-section p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    opacity: 0.95;
+}
+
+/* Footer */
+.footer {
+    background: linear-gradient(135deg, rgba(20, 10, 5, 0.98) 0%, rgba(40, 20, 10, 0.95) 100%);
+    color: #d4af37;
+    padding: 60px 40px 30px;
+    border-top: 2px solid #d4af37;
+    position: relative;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-content {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.footer-brand {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    font-weight: 700;
     letter-spacing: 1px;
+}
+
+.footer-tagline {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-style: italic;
+    color: #e8dcc8;
+    margin-bottom: 20px;
 }
 
 .footer-address {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 1rem;
+    font-size: 0.95rem;
     color: #e8dcc8;
     line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+.footer-phone a {
+    color: #d4af37;
+    text-decoration: none;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+
+.footer-phone a:hover {
+    text-decoration: underline;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 30px;
+    border-top: 1px solid rgba(212, 175, 55, 0.3);
+    color: #e8dcc8;
+    font-size: 0.9rem;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .brand-name {
-        font-size: 2.5rem;
+    .navbar {
+        padding: 12px 20px;
     }
 
-    .main-title {
-        font-size: 2.5rem;
+    .nav-logo {
+        height: 40px;
     }
 
-    .subtitle {
-        font-size: 1.3rem;
-    }
-
-    .welcome {
-        font-size: 1.2rem;
-    }
-
-    .description {
+    .nav-text {
         font-size: 1rem;
     }
 
-    .service-item,
-    .location,
-    .phone {
-        font-size: 1rem;
+    .hero {
+        height: 400px;
+        margin-top: 70px;
+    }
+
+    .coming-soon {
+        padding: 60px 20px;
     }
 
     .coming-soon-title {
-        font-size: 2rem;
+        font-size: 2.5rem;
+    }
+
+    .coming-soon-subtitle {
+        font-size: 1.3rem;
     }
 
     .coming-soon-description {
-        font-size: 1rem;
+        font-size: 1.1rem;
     }
 
-    .features-heading {
-        font-size: 1.2rem;
+    .services-showcase {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        margin-bottom: 50px;
     }
 
-    .feature-item {
-        font-size: 1rem;
+    .service-card {
+        padding: 30px 20px;
     }
 
-    .social-heading {
-        font-size: 1rem;
+    .service-icon-circle {
+        font-size: 2.5rem;
+        width: 70px;
+        height: 70px;
     }
 
-    .social-links {
-        gap: 15px;
+    .service-card h3 {
+        font-size: 1.3rem;
     }
 
-    .social-link {
+    .service-card p {
         font-size: 0.95rem;
     }
 
-    .footer-brand {
+    .features-section {
+        padding: 40px 20px;
+        margin-bottom: 40px;
+    }
+
+    .features-title {
+        font-size: 1.7rem;
+        margin-bottom: 30px;
+    }
+
+    .features-list {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .features-list li {
+        font-size: 1rem;
+    }
+
+    .contact-section {
+        padding: 40px 20px;
+        margin-bottom: 40px;
+    }
+
+    .contact-title {
+        font-size: 1.8rem;
+    }
+
+    .contact-location,
+    .contact-phone {
+        font-size: 1rem;
+    }
+
+    .social-section {
+        padding: 40px 20px;
+        margin-bottom: 30px;
+    }
+
+    .social-title {
+        font-size: 1.7rem;
+    }
+
+    .social-subtitle {
+        font-size: 1rem;
+    }
+
+    .social-icons {
+        gap: 15px;
+    }
+
+    .social-icon {
+        padding: 12px 20px;
+        font-size: 0.9rem;
+    }
+
+    .cta-section {
+        padding: 40px 20px;
+    }
+
+    .cta-title {
         font-size: 1.5rem;
+    }
+
+    .footer {
+        padding: 40px 20px 20px;
+    }
+
+    .footer-brand {
+        font-size: 1.8rem;
+    }
+
+    .footer-tagline {
+        font-size: 1rem;
     }
 
     .footer-address {
@@ -405,73 +631,177 @@ body {
 }
 
 @media (max-width: 480px) {
+    .navbar {
+        padding: 10px 15px;
+    }
+
+    .nav-logo {
+        height: 35px;
+    }
+
+    .nav-text {
+        font-size: 0.9rem;
+    }
+
     .hero {
-        padding: 20px 10px;
-    }
-
-    .logo {
-        margin-bottom: 30px;
-    }
-
-    .brand-name {
-        font-size: 2rem;
-    }
-
-    .main-title {
-        font-size: 1.8rem;
-        margin-bottom: 15px;
-    }
-
-    .subtitle {
-        font-size: 1rem;
-    }
-
-    .welcome {
-        font-size: 1rem;
-    }
-
-    .description {
-        font-size: 0.95rem;
+        height: 300px;
+        margin-top: 60px;
     }
 
     .coming-soon {
-        padding: 50px 20px;
+        padding: 40px 15px;
+    }
+
+    .coming-soon-logo {
+        height: 60px;
     }
 
     .coming-soon-title {
-        font-size: 1.5rem;
+        font-size: 1.8rem;
     }
 
-    .coming-soon-description {
-        font-size: 0.95rem;
-    }
-
-    .features-heading {
+    .coming-soon-subtitle {
         font-size: 1rem;
     }
 
-    .feature-item {
-        font-size: 0.95rem;
+    .coming-soon-description {
+        font-size: 1rem;
+        margin-bottom: 50px;
     }
 
-    .social-links {
-        flex-direction: column;
+    .service-card {
+        padding: 25px 15px;
+    }
+
+    .service-icon-circle {
+        font-size: 2rem;
+        width: 60px;
+        height: 60px;
+    }
+
+    .service-card h3 {
+        font-size: 1.1rem;
+    }
+
+    .service-card p {
+        font-size: 0.9rem;
+    }
+
+    .features-section {
+        padding: 30px 15px;
+        margin-bottom: 30px;
+    }
+
+    .features-title {
+        font-size: 1.4rem;
+        margin-bottom: 20px;
+    }
+
+    .features-list li {
+        font-size: 0.95rem;
         gap: 10px;
     }
 
-    .social-link {
-        display: flex;
-        justify-content: center;
+    .contact-section {
+        padding: 30px 15px;
+        margin-bottom: 30px;
+    }
+
+    .contact-title {
+        font-size: 1.5rem;
+    }
+
+    .contact-location,
+    .contact-phone {
+        font-size: 0.95rem;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .social-section {
+        padding: 30px 15px;
+        margin-bottom: 25px;
+    }
+
+    .social-title {
+        font-size: 1.4rem;
+    }
+
+    .social-subtitle {
+        font-size: 0.95rem;
+    }
+
+    .social-icons {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .social-icon {
         width: 100%;
         max-width: 250px;
         margin: 0 auto;
+        justify-content: center;
+        padding: 12px 15px;
+    }
+
+    .cta-section {
+        padding: 30px 15px;
+    }
+
+    .cta-title {
+        font-size: 1.3rem;
+    }
+
+    .cta-section p {
+        font-size: 1rem;
+    }
+
+    .footer {
+        padding: 30px 15px 15px;
     }
 
     .footer-brand {
-        font-size: 1.2rem;
+        font-size: 1.4rem;
+    }
+
+    .footer-tagline {
+        font-size: 0.9rem;
     }
 
     .footer-address {
         font-size: 0.85rem;
     }
+
+    .footer-bottom {
+        padding-top: 15px;
+        font-size: 0.8rem;
+    }
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.service-card {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.service-card:nth-child(2) {
+    animation-delay: 0.1s;
+}
+
+.service-card:nth-child(3) {
+    animation-delay: 0.2s;
+}
+
+.service-card:nth-child(4) {
+    animation-delay: 0.3s;
 }
