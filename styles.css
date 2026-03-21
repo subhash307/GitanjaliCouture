@@ -150,7 +150,7 @@ body {
 .hero-image {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
     display: block;
     animation: zoomInSlide 0.8s ease-out;
 }
@@ -230,6 +230,310 @@ body {
     background: linear-gradient(135deg, #ff3333 0%, #FF0000 100%);
     transform: translateY(-3px);
     box-shadow: 0 8px 25px rgba(255, 0, 0, 0.5);
+}
+
+/* About Us Section */
+.about-section {
+    background: linear-gradient(135deg, #0f172e 0%, #1a1f3a 50%, #0f172e 100%);
+    padding: 80px 40px;
+    position: relative;
+    overflow: hidden;
+}
+
+.about-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+
+/* Decorative Ornaments */
+.about-ornament {
+    position: absolute;
+    font-size: 120px;
+    opacity: 0.15;
+    pointer-events: none;
+    color: #d4af37;
+}
+
+.about-ornament-left {
+    top: 20px;
+    left: 20px;
+}
+
+.about-ornament-right {
+    bottom: 20px;
+    right: 20px;
+    transform: rotate(180deg);
+}
+
+.about-ornament::before {
+    content: '✦';
+}
+
+/* About Header */
+.about-header {
+    text-align: center;
+    margin-bottom: 60px;
+    position: relative;
+    z-index: 1;
+}
+
+.about-subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    color: #d4af37;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    font-weight: 400;
+}
+
+.about-logo-section {
+    text-align: center;
+}
+
+.about-logo-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 4.5rem;
+    color: #d4af37;
+    font-weight: 600;
+    letter-spacing: 2px;
+    line-height: 1;
+}
+
+.about-logo-subtext {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    color: #d4af37;
+    letter-spacing: 4px;
+    margin-top: 10px;
+    text-transform: uppercase;
+    font-weight: 400;
+}
+
+/* About Content */
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    margin-bottom: 80px;
+    position: relative;
+    z-index: 1;
+}
+
+.about-image-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-image {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border: 3px solid #d4af37;
+    border-radius: 8px;
+    box-shadow: 0 15px 40px rgba(212, 175, 55, 0.3);
+    animation: slideInLeft 0.8s ease-out;
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.about-text {
+    animation: slideInRight 0.8s ease-out;
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.founder-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    color: #d4af37;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+.founder-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    color: #e8dcc8;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    font-weight: 600;
+}
+
+.about-description {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.05rem;
+    color: #d4cfc5;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+.founder-quote {
+    background: rgba(212, 175, 55, 0.1);
+    border-left: 4px solid #d4af37;
+    padding: 20px;
+    margin: 30px 0;
+    border-radius: 4px;
+}
+
+.founder-quote p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    color: #e8dcc8;
+    line-height: 1.8;
+    font-style: italic;
+}
+
+.founder-signature {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: #d4af37;
+    margin-top: 30px;
+    letter-spacing: 1px;
+}
+
+/* Connect With Us */
+.about-connect {
+    text-align: center;
+    padding: 60px;
+    background: rgba(20, 10, 5, 0.4);
+    border: 2px solid #d4af37;
+    border-radius: 12px;
+    margin-bottom: 40px;
+    position: relative;
+    z-index: 1;
+}
+
+.connect-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: #d4af37;
+    margin-bottom: 40px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 30px;
+}
+
+.social-link {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #d4af37 0%, #c9a228 100%);
+    border-radius: 50%;
+    color: #1a1f3a;
+    font-size: 1.8rem;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.social-link:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(212, 175, 55, 0.4);
+}
+
+.social-link.youtube {
+    background: linear-gradient(135deg, #FF0000 0%, #cc0000 100%);
+    color: white;
+}
+
+.social-link.instagram {
+    background: linear-gradient(135deg, #E4405F 0%, #d83d76 100%);
+    color: white;
+}
+
+.social-link.facebook {
+    background: linear-gradient(135deg, #1877F2 0%, #0a66c2 100%);
+    color: white;
+}
+
+.social-handles {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 30px;
+}
+
+.social-handles p {
+    font-family: 'Cormorant Garamond', serif;
+    color: #d4af37;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+}
+
+.whatsapp-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: transparent;
+    color: #d4af37;
+    border: 2px solid #d4af37;
+    padding: 15px 40px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+}
+
+.whatsapp-btn:hover {
+    background: #d4af37;
+    color: #1a1f3a;
+    transform: translateY(-3px);
+}
+
+.whatsapp-btn i {
+    font-size: 1.3rem;
+}
+
+/* About Footer */
+.about-footer {
+    text-align: center;
+    padding-top: 40px;
+    border-top: 1px solid #d4af37;
+    position: relative;
+    z-index: 1;
+}
+
+.about-footer p {
+    font-family: 'Cormorant Garamond', serif;
+    color: #d4af37;
+    font-size: 0.95rem;
+    letter-spacing: 1px;
 }
 
 /* Coming Soon Section */
@@ -678,6 +982,61 @@ body {
         font-size: 0.9rem;
     }
 
+    /* About Section Tablet */
+    .about-section {
+        padding: 60px 30px;
+    }
+
+    .about-subtitle {
+        font-size: 1.5rem;
+    }
+
+    .about-logo-text {
+        font-size: 3.5rem;
+    }
+
+    .about-logo-subtext {
+        font-size: 1.1rem;
+    }
+
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        margin-bottom: 60px;
+    }
+
+    .about-image {
+        max-width: 350px;
+    }
+
+    .founder-name {
+        font-size: 2.2rem;
+    }
+
+    .founder-title {
+        font-size: 1.1rem;
+    }
+
+    .about-description {
+        font-size: 1.02rem;
+    }
+
+    .about-connect {
+        padding: 50px 30px;
+    }
+
+    .connect-title {
+        font-size: 1.8rem;
+    }
+
+    .social-links {
+        gap: 30px;
+    }
+
+    .social-handles {
+        gap: 30px;
+    }
+
     .coming-soon {
         padding: 60px 20px;
     }
@@ -847,6 +1206,101 @@ body {
     .hero-subscribe-box {
         padding: 20px;
         border-radius: 12px;
+    }
+
+    /* About Section Mobile */
+    .about-section {
+        padding: 60px 20px;
+    }
+
+    .about-ornament {
+        font-size: 80px;
+    }
+
+    .about-header {
+        margin-bottom: 40px;
+    }
+
+    .about-subtitle {
+        font-size: 1.3rem;
+    }
+
+    .about-logo-text {
+        font-size: 3rem;
+    }
+
+    .about-logo-subtext {
+        font-size: 1rem;
+    }
+
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        margin-bottom: 50px;
+    }
+
+    .about-image {
+        max-width: 100%;
+    }
+
+    .founder-name {
+        font-size: 1.8rem;
+    }
+
+    .founder-title {
+        font-size: 1rem;
+    }
+
+    .about-description {
+        font-size: 1rem;
+        text-align: left;
+    }
+
+    .founder-quote {
+        padding: 15px;
+    }
+
+    .founder-quote p {
+        font-size: 1rem;
+    }
+
+    .founder-signature {
+        font-size: 1.5rem;
+    }
+
+    .about-connect {
+        padding: 40px 20px;
+        margin-bottom: 30px;
+    }
+
+    .connect-title {
+        font-size: 1.5rem;
+        margin-bottom: 30px;
+    }
+
+    .social-links {
+        gap: 20px;
+        margin-bottom: 20px;
+    }
+
+    .social-link {
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
+    }
+
+    .social-handles {
+        gap: 20px;
+        flex-direction: column;
+    }
+
+    .social-handles p {
+        font-size: 0.9rem;
+    }
+
+    .whatsapp-btn {
+        padding: 12px 30px;
+        font-size: 0.95rem;
     }
 
     .hero-subscribe-text {
